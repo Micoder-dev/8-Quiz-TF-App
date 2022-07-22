@@ -38,4 +38,6 @@ dependencies {
 
     //Volley Library
     implementation 'com.android.volley:volley:1.2.1'
+    //Tinder like swipeable card view for Android
+    implementation "com.yuyakaido.android:card-stack-view:2.3.4"
 }
