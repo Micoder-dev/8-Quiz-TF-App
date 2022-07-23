@@ -23,7 +23,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private CardStackView mCardStackView;
     private QuizManager mQuizManager;
 
 

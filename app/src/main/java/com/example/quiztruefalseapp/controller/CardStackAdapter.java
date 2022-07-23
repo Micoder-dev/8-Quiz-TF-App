@@ -49,7 +49,13 @@ public class CardStackAdapter extends RecyclerView.Adapter<FilmViewHolder> {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(mContext, "True is tapped", Toast.LENGTH_SHORT).show();
+                if (mFilmQuestions.get(position).isTrueAnswer()) {
+
+                    Toast.makeText(mContext, "Correct Answer", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    Toast.makeText(mContext, "Wrong Answer", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
@@ -58,7 +64,13 @@ public class CardStackAdapter extends RecyclerView.Adapter<FilmViewHolder> {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(mContext, "False is tapped", Toast.LENGTH_SHORT).show();
+                if (mFilmQuestions.get(position).isTrueAnswer()) {
+
+                    Toast.makeText(mContext, "Wrong Answer", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    Toast.makeText(mContext, "Correct Answer", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });

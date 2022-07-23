@@ -49,7 +49,7 @@ public class QuizManager {
                 try {
                     JSONArray results = response.getJSONArray("results");
 
-                    for (int index =0; index < response.length(); index++) {
+                    for (int index =0; index < results.length(); index++) {
 
                         JSONObject questionJsonObject = results.getJSONObject(index);
                         String questionText = questionJsonObject.getString("question");
