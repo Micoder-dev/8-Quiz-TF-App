@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.quiztruefalseapp.R;
+import com.example.quiztruefalseapp.model.QuizQuestion;
 import com.example.quiztruefalseapp.view.FilmViewHolder;
 
 import java.util.List;
@@ -17,14 +18,14 @@ import java.util.List;
 public class CardStackAdapter extends RecyclerView.Adapter<FilmViewHolder> {
 
     private Context mContext;
-    private List<String> mFilmNames;
+    private List<QuizQuestion> mFilmQuestions;
     private LayoutInflater mLayoutInflater;
 
 
-    public CardStackAdapter(Context context, List<String> filmNames) {
+    public CardStackAdapter(Context context, List<QuizQuestion> filmQuestions) {
 
         mContext = context;
-        mFilmNames = filmNames;
+        mFilmQuestions = filmQuestions;
         mLayoutInflater = LayoutInflater.from(context);
 
     }
@@ -42,7 +43,7 @@ public class CardStackAdapter extends RecyclerView.Adapter<FilmViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull FilmViewHolder holder, int position) {
 
-        holder.getTxtFilmQuestion().setText(mFilmNames.get(position));
+        holder.getTxtFilmQuestion().setText(mFilmQuestions.get(position).getQuestionText());
 
         holder.getImgButtonTrue().setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +67,6 @@ public class CardStackAdapter extends RecyclerView.Adapter<FilmViewHolder> {
 
     @Override
     public int getItemCount() {
-        return mFilmNames.size();
+        return mFilmQuestions.size();
     }
 }
